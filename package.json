@@ -1,0 +1,43 @@
+{
+  "name": "lintingrules",
+  "version": "0.0.1",
+  "description": "Custom linting rules",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "release": "npm run build && rimraf dist && tsc -p tsconfig-release.json && npm run copy:common && npm run prepare:package",
+    "build": "rimraf dist && tsc && npm t",
+    "copy:common": "cp README.md dist",
+    "prepare:package": "cat package.json | ts-node build/package.ts > dist/package.json",
+    "test": "rimraf dist && tsc && mocha -R nyan dist/test --recursive",
+    "test:watch": "rimraf dist && tsc && BUILD_TYPE=dev && mocha -R nyan dist/test --watch --recursive",
+    "tscv": "tsc --version",
+    "tsc": "tsc",
+    "tsc:watch": "tsc --w"
+  },
+  "author": "j.bosch",
+  "license": "ISC",
+  "peerDependencies": {
+    "tslint": "^5.11.0",
+    "typescript": ">=2.5.2"
+  },
+  "dependencies": {
+    "tslint": "^5.11.0",
+    "typescript": "^2.6.2",
+    "@phenomnomnominal/tsquery": "^2.1.1"
+  },
+  "devDependencies": {
+    "@phenomnomnominal/tsquery": "^2.1.1",
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.11.4",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "rimraf": "^2.6.2",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "typescript": "^2.6.2"
+  }
+}
