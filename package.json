@@ -2,14 +2,14 @@
   "name": "lintingrules",
   "version": "0.0.1",
   "description": "Custom linting rules",
-  "main": "index.js",
+  "main": "lintrules.json",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "release": "npm run build && rimraf dist && tsc -p tsconfig-release.json && npm run copy:common && npm run prepare:package",
     "build": "rimraf dist && tsc && npm t",
-    "copy:common": "cp README.md dist",
+    "copy:common": "cp README.md dist && cp lintrules.json dist",
     "prepare:package": "cat package.json | ts-node build/package.ts > dist/package.json",
     "test": "rimraf dist && tsc && mocha -R nyan dist/test --recursive",
     "test:watch": "rimraf dist && tsc && BUILD_TYPE=dev && mocha -R nyan dist/test --watch --recursive",
@@ -20,13 +20,13 @@
   "author": "j.bosch",
   "license": "ISC",
   "peerDependencies": {
-    "tslint": "^5.11.0",
+    "tslint": "^5.9.0",
     "typescript": ">=2.5.2"
   },
   "dependencies": {
+    "@phenomnomnominal/tsquery": "^2.1.1",
     "tslint": "^5.11.0",
-    "typescript": "^2.6.2",
-    "@phenomnomnominal/tsquery": "^2.1.1"
+    "typescript": "^2.6.2"
   },
   "devDependencies": {
     "@phenomnomnominal/tsquery": "^2.1.1",

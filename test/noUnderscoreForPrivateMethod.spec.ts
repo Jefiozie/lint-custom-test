@@ -1,6 +1,6 @@
 import { tsquery } from "@phenomnomnominal/tsquery";
 import { expect } from "chai";
-import { Rule } from "../src/noUnderscoreForPrivateMethod";
+import { Rule } from "../src/rules/noUnderscoreForPrivateMethod";
 
 describe("noUnderscoreForPrivateMethod", () => {
   it("should create a lint error if private method has no underscore as first char", () => {

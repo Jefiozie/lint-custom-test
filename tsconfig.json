@@ -11,5 +11,6 @@
     "outDir": "./dist",
     "typeRoots": ["./node_modules/@types", "./node_modules"],
     "types": ["mocha", "chai", "node"]
-  }
+  },
+  "exclude": ["node_modules"]
 }
