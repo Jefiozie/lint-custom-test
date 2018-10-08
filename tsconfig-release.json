@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
-    "experimentalDecorators": true,
-    "target": "es5",
-    "module": "commonjs",
     "declaration": true,
-    "noImplicitAny": false,
+    "importHelpers": true,
+    "lib": ["dom", "es2017"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noEmitHelpers": true,
+    "noImplicitAny": true,
     "removeComments": true,
-    "lib": ["es6", "es2015", "dom"],
-    "noLib": false,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "suppressImplicitAnyIndexErrors": true,
+    "target": "es5",
     "outDir": "./dist/rules",
     "typeRoots": ["./node_modules/@types", "./node_modules"],
     "types": ["mocha", "chai", "node"]
