@@ -1,6 +1,6 @@
 import * as tq from "@phenomnomnominal/tsquery";
-import * as ts from "typescript";
 import * as Lint from "tslint";
+import * as ts from "typescript";
 
 const NO_UNDERSCORE_FOR_PRIVATE_METHOD =
   "MethodDeclaration:has(PrivateKeyword) > Identifier:not([name=/_.*/])";
@@ -13,8 +13,8 @@ export class Rule extends Lint.Rules.AbstractRule {
     description: "Ensures that private method starts with underscore.",
     optionsDescription: "Not configurable.",
     options: null,
-    optionExamples: [true],
-    hasFix: true,
+    optionExamples: [],
+    hasFix: false,
     type: "style",
     typescriptOnly: false
   };
